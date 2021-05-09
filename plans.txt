@@ -13,5 +13,15 @@ FEBRI:
 
 
 EVI:
--
-
+*Detection covid-19 symptoms.
+*Explaination: In the era of a pandemic, vigilance is still needed anywhere and anytime. So we need some simple form for covid-19 symptoms to avoid more covid. If He/Her have more percentage got covid, He/Her can't go to this or that place. But this project is will have some suggestions to anticipation the covid too. This Program can apply in any place, like market, shop, especially in hospital, etc
+*Example:
+- User need to input her identities before entered the place.
+- In here User will answer some questions about covid-19 symptoms like, 1.can her taste or smell something? 2. Has he had any respiratory problems recently? 3. etc
+- The program will make some percentage after filling out the test.
+- If the user has high percentage for covid-19 symptoms the program won't allow the user to entered the place. If not the user can enter the place.
+* weakness of this project
+- ineffective in accuracy
+- there will be a temporary conflict if this project is implemented
+- not all of people can use this advanced technology.
+*This Idea is not yet FIX, still need improve.
