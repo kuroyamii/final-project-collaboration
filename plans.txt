@@ -5,7 +5,26 @@ GERY:
 
 
 DIRGA:
--
+- Database Sederhana Riwayat Kunjungan Rumah Sakit
+
+Program berisikan data mengenai:
+1. Tanggal Kunjungan
+2. Identitas Pasien
+3. Gejala Penyakit
+4. Nama Penyakit
+5. Obat yang diberikan kepada pasien
+6. Tanggal Kontrol/Kunjungan Selanjutnya
+
+Pada program ini, bisa digunakan kelima modul yang diberikan, terutama Operasi File.
+CRUD (Create, Read, Update, Delete) juga bisa digunakan pada kasus ini.
+
+Create untuk menginputkan data pada saat pertama kali
+Read bisa digunakan untuk membaca data-data yang ada
+Update bisa digunakan untuk menambahkan gejala-gejala yang dialami pasien bila terlewat pada saat menginputkan data
+Delete mungkin bisa digunakan bila pasien sudah sembuh dan tidak perlu kontrol/berkunjung kembali ke rumah sakit
+
+Modular juga bisa digunakan untuk permasalahan ini, dimana setiap file bisa berisikan masing-masing fungsi
+
 
 
 FEBRI:
