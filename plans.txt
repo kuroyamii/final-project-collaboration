@@ -1,8 +1,10 @@
 INSERT YOUR IDEAS HERE:
 
 GERY:
--
-
+- Usulan tambahan fitur: 
+-->sign in dan sign up
+-->ada 2 macam sign in yaitu sign in biasa dan sign in pengunjung. sign up juga sama, namun untuk isng up admin nantinya akan me lookup db admin untuk melihat
+siapa saja yang eligible memiliki akun admin.
 
 DIRGA:
 -
