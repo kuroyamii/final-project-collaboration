@@ -3,5 +3,6 @@
 #include "stdio.h"
 
 int main(){
-    signin();
+    signup();
+    return 0;
 }

@@ -77,7 +77,7 @@ void signup(){
     fp = fopen("./databases/admin.txt","a+");
     printf("Masukkan data untuk memeriksa eligibility:\n");
 
-    if(eligible() == true){
+    if(eligible() == false){
         printf("Masukkan data yang ingin didaftarkan:\n");
         printf("Username: ");
         while(loop == true){
