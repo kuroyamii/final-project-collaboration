@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-void inputDatabasePasien(char tanggalKunjungan[], char namaPasien[], int umurPasien, char gejalaPenyakit[], char penyakitPasien[], char obatPasien[], char tanggalKontrol[])
+void inputDatabasePasien(char namaPasien[], char ttl[], char tanggalKunjungan[], int umurPasien, char gejalaPenyakit[], char penyakitPasien[], char obatPasien[], char tanggalKontrol[])
 {
     FILE *ptr;
     ptr = fopen("databasePasien.txt", "a");
 
-    fprintf(ptr, "Tanggal Kunjungan : %sNama Pasien: %sUmur Pasien: %d\nGejala Penyakit: %s", tanggalKunjungan, namaPasien, umurPasien, gejalaPenyakit);
-    fprintf(ptr, "Penyakit Pasien: %s\nObat Untuk Pasien: %s\nTanggal Kontrol Selanjutnya: %s\n\n", penyakitPasien, obatPasien, tanggalKontrol);
+    fprintf(ptr, "*****\n%s%s%s%d\n%s", namaPasien, ttl, tanggalKunjungan, umurPasien, gejalaPenyakit);
+    fprintf(ptr, "%s\n%s\n%s\n\n", penyakitPasien, obatPasien, tanggalKontrol);
     fflush(stdin);
     fclose(ptr);
 }
