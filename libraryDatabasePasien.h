@@ -1,5 +1,5 @@
-#ifndef HEADER_SAYA
-#define HEADER_SAYA
+#ifndef LIBRARY_DATABASE_PASIEN
+#define LIBRARY_DATABASE_PASIEN
 #include "libraryDatabasePasien.c"
 
 #endif
