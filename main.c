@@ -3,10 +3,10 @@
 #include "stdbool.h"
 
 void clear();
-
+void pause();
 
 int main(){
-    int pil,pil2;
+    int pil,pil2,pil3;
     bool loop = true;
     do{
         printf("Pilih Menu:\n");
@@ -19,21 +19,36 @@ int main(){
             {
                 if(signin() == true){
                     while(1){
-                        printf("1. Read Data Pasien\n2. Update Data Pasien\n3. Selesai\nPilihan: ");
+                        printf("1. Tambah Admin\n2. Menu Pasien\n3. Log Out\nPilihan: ");
                         scanf("%d",&pil2);
                         switch(pil2){
                             case 1:
-                                printPasien();
+                                addAdmin();
                                 break;
                             case 2:
-                                updatePasien();
-                                break;
-                            case 3:
-                                break;
+                            {
+                                while(1){
+                                    printf("1. Read Data Pasien\n2. Update Data Pasien\n3. Selesai\nPilihan: ");
+                                    scanf("%d",&pil3);
+                                    switch(pil3){
+                                        case 1:
+                                            printPasien();
+                                            break;
+                                        case 2:
+                                            updatePasien();
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                    if(pil3 == 3) break;
+                                    if(pil3 == 1 || pil3 == 2) pause();
+                                }
+                            }break;
                             default:
                                 break;
-                        }
                         if(pil2 == 3) break;
+                        }
+                        if (pil2 == 1 || pil2 == 2) pause();
                     }
                 }
                 else printf("Access Denied!\n");
@@ -48,6 +63,7 @@ int main(){
             default:
                 break;
         }
+        if (pil == 1 || pil == 2 || pil == 3) pause();
     }while(loop == true);
 }
 
@@ -57,4 +73,17 @@ void clear(){
     #else
         std : system("clear");
     #endif
+}
+
+void pause(){
+    char pil[2];
+    while(1){
+        printf("Apakah anda ingin melanjutkan program?(y/t)\nPilihan: ");
+        scanf("%s",&pil);
+        lower(pil);
+        if(strcmp(pil,"t") == 0 || strcmp(pil,"T") == 0){
+            exit(1);
+            break;
+        }else if(strcmp(pil,"y") == 0 || strcmp(pil,"Y") == 0) break;
+    }
 }

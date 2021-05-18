@@ -68,6 +68,10 @@ bool lookupPasien(){
 
 void printPasien(){
     if(lookupPasien() == true){
+        upper(data1);
+        upper(data2);
+        upper(data3);
+        upper(data4);
         printf("Nama              : %s\n", data1);
         printf("Tanggal Lahir     : %s\n", data2);
         printf("Tanggal Kunjungan : %s\n", data3);
@@ -81,10 +85,19 @@ void printPasien(){
 
 void updatePasien(){
     int pil;
+    char temp[500];
     if(lookupPasien() == true){
+        strcpy(temp,data1);
+        upper(temp);
         printf("Nama              : %s\n", data1);
+        strcpy(temp,data2);
+        upper(temp);
         printf("Tanggal Lahir     : %s\n", data2);
+        strcpy(temp,data3);
+        upper(temp);
         printf("Tanggal Kunjungan : %s\n", data3);
+        strcpy(temp,data4);
+        upper(temp);
         printf("Umur              : %s\n", data4);
         printf("Gejala            : %s\n", data5);
         printf("Penyakit          : %s\n", data6);
