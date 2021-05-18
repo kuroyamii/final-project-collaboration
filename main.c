@@ -1,5 +1,4 @@
-#include "login.h"
-#include "stdlib.h"
+#include "readPasien.h"
 #include "stdio.h"
 #include "stdbool.h"
 
@@ -23,6 +22,7 @@ int main(){
                 scanf("%d",&pil2);
                 switch(pil2){
                     case 1:
+                        lookupPasien();
                         break;
                     case 2:
                         break;
