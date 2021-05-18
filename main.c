@@ -17,20 +17,26 @@ int main(){
                 break;
             case 2:
             {
-                signin();
-                printf("1. Read Data Pasien\n2. Update Data Pasien\n3. Selesai\nPilihan: ");
-                scanf("%d",&pil2);
-                switch(pil2){
-                    case 1:
-                        lookupPasien();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    default:
-                        break;
+                if(signin() == true){
+                    while(1){
+                        printf("1. Read Data Pasien\n2. Update Data Pasien\n3. Selesai\nPilihan: ");
+                        scanf("%d",&pil2);
+                        switch(pil2){
+                            case 1:
+                                printPasien();
+                                break;
+                            case 2:
+                                updatePasien();
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                break;
+                        }
+                        if(pil2 == 3) break;
+                    }
                 }
+                else printf("Access Denied!\n");
             }
                 break;
             case 3:
