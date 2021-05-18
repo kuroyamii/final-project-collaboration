@@ -68,8 +68,8 @@ bool lookupPasien(){
 
 void printPasien(){
     if(lookupPasien() == true){
-        printf("Nama              : %s\n",data1);
-        printf("Tanggal Lahir     : %s\n",data2);
+        printf("Nama              : %s\n", data1);
+        printf("Tanggal Lahir     : %s\n", data2);
         printf("Tanggal Kunjungan : %s\n", data3);
         printf("Umur              : %s\n", data4);
         printf("Gejala            : %s\n", data5);
@@ -80,81 +80,85 @@ void printPasien(){
 }
 
 void updatePasien(){
-    // if(lookupPasien() == true){
-    //     //PR AJA YA
-    //     // fflush(stdin);
-    //     // printf("Update data: \n");
-    //     // printf("Penyakit          : ");
-    //     // scanf("%[^\n]s",data6);
-    //     // fflush(stdin);
-    //     // printf("Obat              : ");
-    //     // scanf("%[^\n]s",data7);
-    //     // fflush(stdin);
-    //     // printf("Tanggal Kontrol   : ");
-    //     // scanf("%[^\n]s",data8);
-    //     // fflush(stdin);
+    int pil;
+    if(lookupPasien() == true){
+        printf("Nama              : %s\n", data1);
+        printf("Tanggal Lahir     : %s\n", data2);
+        printf("Tanggal Kunjungan : %s\n", data3);
+        printf("Umur              : %s\n", data4);
+        printf("Gejala            : %s\n", data5);
+        printf("Penyakit          : %s\n", data6);
+        printf("Obat              : %s\n", data7);
+        printf("Tanggal Kontrol   : %s\n", data8);
+        do{
+            printf("Apakah anda ingin memperbaharui data ini?\n1. Ya\n2. Tidak\nPilihan: ");
+            scanf("%d",&pil);
+            switch(pil){
+                case 1:
+                {
+                    FILE *fp;
+                    FILE *fptr;
+                    fp = fopen("databasePasien.txt","r");
+                    fptr = fopen("databases/tmp.txt","w");
 
-    //     // //COPY KE TMP
-    //     // FILE *fptr;
-    //     // FILE *fp;
-    //     // fptr = fopen("databasePasien.txt","w+");
-    //     // fp = fopen("./database/tmp.txt","w+");
-    //     // if(fp != NULL){
-    //     //     remove("database/tmp.txt");
-    //     // }
-
-    //     // while(fgets(tmp,500,fptr) != NULL){
-    //     //     if(strcmp(tmp,data1) == 0){
-    //     //         fflush(stdin);
-    //     //         fgets(tmp,500,fptr);
-    //     //         if(strcmp(tmp,data2) == 0){
-    //     //             fprintf(fp, "%s",data1);
-    //     //             fflush(stdin);
-    //     //             fprintf(fp, "%s",data2);
-
-    //     //             fgets(tmp, 700, fptr);
-    //     //             fprintf(fp, "%s",data3);
-    //     //             fflush(stdin);
-
-    //     //             fgets(tmp, 4, fptr);
-    //     //             fprintf(fp, "%s",data4);
-    //     //             fflush(stdin);
+                    fflush(stdin);
+                    printf("Update data: \n");
+                    printf("Penyakit          : ");
+                    scanf("%[^\n]s",&data6);
+                    fflush(stdin);
+                    printf("Obat              : ");
+                    scanf("%[^\n]s",&data7);
+                    fflush(stdin);
+                    printf("Tanggal Kontrol   : ");
+                    scanf("%[^\n]s",&data8);
+                    fflush(stdin);
 
 
-    //     //             fgets(tmp, 700, fptr);
-    //     //             fprintf(fp, "%s",data5);
-    //     //             fflush(stdin);
+                    while(fgets(tmp, 500, fp) != NULL){
+                        sscanf(tmp,"%[^\n]s\n",tmp);
+                        if(strcmp(tmp, data1) == 0){
+                            fprintf(fptr,"%s\n",data1);
+                            fflush(stdin);
+                            fgets(tmp, 500, fp);
+                            sscanf(tmp,"%[^\n]s\n",tmp);
+                            if(strcmp(tmp,data2) == 0){
+                                fprintf(fptr,"%s\n",data2);
+                                fflush(stdin);
+                                fgets(tmp, 500, fp);
+                                fprintf(fptr,"%s\n",data3);
+                                fflush(stdin);
+                                fgets(tmp, 500, fp);
+                                fprintf(fptr,"%s\n",data4);
+                                fflush(stdin);
+                                fgets(tmp, 500, fp);
+                                fprintf(fptr,"%s\n",data5);
+                                fflush(stdin);
+                                fgets(tmp, 500, fp);
+                                fprintf(fptr,"%s\n",data6);
+                                fflush(stdin);
+                                fgets(tmp, 500, fp);
+                                fprintf(fptr,"%s\n",data7);
+                                fflush(stdin);
+                                fgets(tmp, 500, fp);
+                                fprintf(fptr,"%s\n",data8);
+                                fflush(stdin);
+                            }
+                        }else fprintf(fptr, "%s\n", tmp);
+                    }
+                    fclose(fp);
+                    fclose(fptr);
 
+                    fp = fopen("databasePasien.txt","w");
+                    fptr = fopen("databases/tmp.txt","r");
 
-    //     //             fgets(tmp, 700, fptr);
-    //     //             fprintf(fp, "%s",data6);
-    //     //             fflush(stdin);
-
-
-    //     //             fgets(tmp, 700, fptr);
-    //     //             fprintf(fp, "%s",data7);
-    //     //             fflush(stdin);
-
-
-    //     //             fgets(tmp, 700, fptr);
-    //     //             fprintf(fp, "%s",data8);
-    //     //             fflush(stdin);
-    //     //         }
-    //     //         else fprintf(fp, "%s",data1);
-    //     //     }
-    //     //     else fprintf(fp,"%s",tmp);
-    //     //     fflush(stdin);
-    //     // }
-    //     // fclose(fptr);
-    //     // fclose(fp);
-    //     // fp = fopen("databasePasien.txt","a");
-    //     // fptr = fopen("database/tmp.txt","r");
-
-    //     // remove("databasePasien.txt");
-
-    //     // while(fgets(tmp,500,fptr) != NULL){
-    //     //     fprintf(fp,"%s", tmp);
-    //     //     fflush(stdin);
-    //     // }
-    // } else printf("Data yang anda cari tidak ada!\n");
+                    while(fgets(tmp,500,fptr) != NULL){
+                        fprintf(fp,"%s",tmp);
+                        fflush(stdin);
+                    }             
+                    fclose(fp);
+                    fclose(fptr);
+                }
+            }
+        }while(pil>2 || pil<1 );
+    }
 }
