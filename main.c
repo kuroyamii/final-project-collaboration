@@ -65,8 +65,8 @@ int main(){
                             }break;
                             default:
                                 break;
-                        if(pil2 == 3) break;
                         }
+                        if(pil2 == 3) break;
                         if (pil2 == 1 || pil2 == 2) pause();
                     }
                 }
