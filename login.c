@@ -62,7 +62,7 @@ bool eligible(){
                     sscanf(tmp,"%11[^\n]\n", &tmp);
                     fflush(stdin);
                     if(strcmp(tmp,ttl) == 0){
-                        fgets(tmp,21,fp);  //gatau ngapain kaden
+                        fgets(tmp,21,fp);
                         fflush(stdin);
                         fgets(tmp,21,fp);
                         sscanf(tmp,"%21[^\n]\n", &tmp);
