@@ -10,6 +10,7 @@ void cekPasien()
     char menunggu[] = "Mohon Menunggu Informasi Lebih Lanjut dari Dokter";
     int umurPasien;
 
+    fflush(stdin);
     printf("Masukkan Nama Pasien: \n");
     fgets(namaPasien, 50, stdin);
     lower(namaPasien);

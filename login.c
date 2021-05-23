@@ -51,21 +51,24 @@ bool eligible(){
     while(fgets(tmp,101,fp)!= NULL){
         if(strcmp(tmp,"*****\n") == 0){
             fgets(tmp,101,fp);
-            sscanf(tmp,"%101[^\n]\n", &data);
+            sscanf(tmp,"%101[^\n]\n", &tmp);
             fflush(stdin);
-            if(strcmp(data,nama) == 0){
+            if(strcmp(tmp,nama) == 0){
                 fgets(tmp,51,fp);
-                sscanf(tmp,"%51[^\n]\n", &data);
+                sscanf(tmp,"%51[^\n]\n", &tmp);
                 fflush(stdin);
-                if(strcmp(data,email) == 0){
+                if(strcmp(tmp,email) == 0){
                     fgets(tmp,11,fp);
-                    sscanf(tmp,"%11[^\n]\n", &data);
+                    sscanf(tmp,"%11[^\n]\n", &tmp);
                     fflush(stdin);
-                    if(strcmp(data,ttl) == 0){
+                    if(strcmp(tmp,ttl) == 0){
                         fgets(tmp,21,fp);
-                        sscanf(tmp,"%21[^\n]\n", &data);
                         fflush(stdin);
-                        if(strcmp(data,ktp) == 0){
+                        fgets(tmp,21,fp);
+                        sscanf(tmp,"%21[^\n]\n", &tmp);
+                        fflush(stdin);
+                        if(strcmp(tmp,ktp) == 0){
+                            printf("PASS5\n");
                             fclose(fp);
                             return true;
                         }

@@ -2,9 +2,10 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<string.h>
+#include "stdbool.h"
 
 
-void cekCovid(){
+bool cekCovid(){
     
     int y,i,a,b,c;
     float GejalaT1, GejalaT2, GejalaT3, sum;
@@ -47,7 +48,7 @@ void cekCovid(){
 
     sum = GejalaT1 + GejalaT2 + GejalaT3;
 
-    getch();
+    //getch();
     system("cls");
 
     printf("HASIL CEK GEJALA COVID\n");
@@ -56,34 +57,36 @@ void cekCovid(){
     if(sum<=10)
     {
         printf(">>Tidak terindikasi covid/Sehat.\n");
-        printf(">>Akses masuk diterima!\n");
-        printf("\nSilahkan lanjut ke tahap berikutnya.\n");
     }
 
     else if(sum<=30)
     {
         printf(">>Terindikasi gejala ringan!\n");
         printf(">>Harap melakukan isolasi dan perawatan mandiri di rumah!\n");
-        printf(">>Akses masuk diterima!\n");
-        printf("\nSilahkan lanjut ke tahap berikutnya.\n");
     }
 
     else if(sum<=60)
     {
         printf(">>Terindikasi gejala sedang!\n");
         printf(">>Harap segera melakukan pemeriksaan!\n");
-        printf(">>Akses masuk ditolak!\n");
-        printf("\nSilahkan lanjut ke tahap berikutnya.\n");
     }
     
     else
     {
         printf(">>Terindikasi gejala serius!\n");
         printf(">>Anda memiliki potensi terkena covid!\n>>Harap segera melakukan pemeriksaan!\n");
-        printf(">>Akses masuk ditolak!\n");
-        printf("\nSilahkan lanjut ke tahap berikutnya.\n");
     }
 
-    getch();
-    system("cls");
+
+
+    if(sum<=30){
+        printf(">>Akses masuk diterima!\n");
+        printf("\nSilahkan lanjut ke tahap berikutnya.\n");
+    }else{
+        printf(">>Akses masuk ditolak!\n");
+    }
+
+    //getch();
+    if(sum<=30) return true;
+    else return false;
 }
