@@ -4,7 +4,6 @@
 #include "stdbool.h"
 
 char nama[101],email[51],ttl[11],ktp[21];
-char strbuff[101];
 
 char* lower(char str[]){
    int i;
@@ -68,7 +67,6 @@ bool eligible(){
                         sscanf(tmp,"%21[^\n]\n", &tmp);
                         fflush(stdin);
                         if(strcmp(tmp,ktp) == 0){
-                            printf("PASS5\n");
                             fclose(fp);
                             return true;
                         }
@@ -93,6 +91,7 @@ void signup(){
         printf("Masukkan data yang ingin didaftarkan:\n");
         printf("Username: ");
         while(loop == true){
+            fflush(stdin);
             scanf("%100[^\n]s",username);
             fflush(stdin);
             while(fgets(tmp,101,fp)!=NULL){
@@ -103,10 +102,12 @@ void signup(){
                     loop = false;
                 }
             }
+
             if(loop == true){
                 printf("Username telah terpakai!\n");
             }
         }
+        fflush(stdin);
         printf("Password: ");
         scanf("%100[^\n]s",password);
         fflush(stdin);
